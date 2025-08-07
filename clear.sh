@@ -9,7 +9,7 @@ execute_with_delay() {
 }
 
 # Clear log files
-execute_with_delay 'find /home -type f \( -name "error_log" -o -name "access_log" -o -name "*.log" \) -exec sh -c '\''echo "Truncating: $1"; > "$1"'\'' sh {} \;'
+execute_with_delay 'find /home -type f \( -name "error_log" -o -name "access_log" -o -name "*.log" -o -name "php_errorlog" -o -name "suphp_log" \) -print -delete'
 
 # Remove softaculous backups
 execute_with_delay 'find /home -type f -path "*/softaculous_backups/wp.*.tar.gz" -exec rm -v {} \;'
