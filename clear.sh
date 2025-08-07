@@ -18,7 +18,9 @@ execute_with_delay 'find /home -type f -path "*/softaculous_backups/wp.*.tar.gz"
 execute_with_delay 'for user in `/bin/ls -A /var/cpanel/users` ; do rm -fv /home/$user/backup-*$user.tar.gz ; done'
 
 # Remove Cpanel temp files
-execute_with_delay 'rm -fv /home/*/tmp/Cpanel_*'
+execute_with_delay 'rm -rfv /home/*/tmp/*'
+
+execute_with_delay 'rm -rfv /home/*/logs/*'
 
 # Final message
 echo "Thank You all Log files cleared"
