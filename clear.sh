@@ -22,5 +22,7 @@ execute_with_delay 'rm -rfv /home/*/tmp/*'
 
 execute_with_delay 'rm -rfv /home/*/logs/*'
 
+execute_with_delay 'find /home -type f \( -path "*/wp-content/ai1wm-backups/*.wpress" -o -path "*/wp-content/updraft/*.zip" \) -delete'
+
 # Final message
 echo "Thank You all Log files cleared"
